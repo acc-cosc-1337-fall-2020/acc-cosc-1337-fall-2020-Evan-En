@@ -2,7 +2,7 @@
 #include "decision.h"
 //Write namespace using statements for cout and cin
 #include<iostream>
-using namespace std;
+using std::cout; using std::cin; using std::endl;
 int main() 
 {
 	int grade;

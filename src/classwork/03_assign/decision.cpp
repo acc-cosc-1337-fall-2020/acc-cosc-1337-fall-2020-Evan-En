@@ -40,6 +40,6 @@ char get_letter_grade_using_switch(int grade)
         case 0:
             return 'F';
             break;
-        default: return 'F';
+        default: return 'I';//invalid message use string
     }
 }

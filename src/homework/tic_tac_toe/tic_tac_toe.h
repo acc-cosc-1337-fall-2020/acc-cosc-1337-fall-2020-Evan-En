@@ -7,36 +7,6 @@ class TicTacToe
     private:
         std::string player;
         std::vector<std::string> pegs{" ", " ", " ", " ", " ", " ", " ", " ", " "};
-
-    public:
-        void start_game(std::string first_player)
-        {
-            if(first_player == "X" || first_player == "O")
-            {
-                player = first_player;
-                clear_board();
-            }
-        }
-        void display_board()
-        {
-            for(int r = 1; r<10; r++)
-            {
-                cout<<pegs[r-1];
-                if(r % 3 == 0)
-                {
-                    cout<<"\n";
-                }
-            }
-        }
-        string get_player()
-        {
-            return player;
-        }
-        void mark_board(int position)
-        {
-            pegs[position-1] = player;
-            set_next_player();
-        }
         void set_next_player()
         {
             if(player == "X")
@@ -65,6 +35,35 @@ class TicTacToe
             {
                 pegs[i] = " ";
             }
+        }
+    public:
+        void start_game(std::string first_player)
+        {
+            if(first_player == "X" || first_player == "O")
+            {
+                player = first_player;
+                clear_board();
+            }
+        }
+        void display_board()
+        {
+            for(int r = 1; r<10; r++)
+            {
+                cout<<pegs[r-1];
+                if(r % 3 == 0)
+                {
+                    cout<<"\n";
+                }
+            }
+        }
+        string get_player()
+        {
+            return player;
+        }
+        void mark_board(int position)
+        {
+            pegs[position-1] = player;
+            set_next_player();
         }
         bool game_over()
         {

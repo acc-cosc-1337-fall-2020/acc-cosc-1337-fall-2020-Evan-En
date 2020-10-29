@@ -8,7 +8,7 @@ TEST_CASE("Check TicTacToe")
 {
 	TicTacToe tic;
 	tic.start_game("X");
-	//Tests for a tie
+	//Try to get a tie because if you just mark in order x will always win so game over will be true before it ends
 	tic.mark_board(2);
 	REQUIRE(tic.game_over() == false);
 	tic.mark_board(1);

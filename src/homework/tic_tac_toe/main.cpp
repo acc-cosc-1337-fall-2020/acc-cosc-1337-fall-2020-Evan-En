@@ -6,6 +6,7 @@ int main()
 	TicTacToe tic;
 	int position;
 	string player;
+	string ans;
 	cout<<"Enter X or O: "<<"\n";
 	cin>>player;
 	if(player == "x")
@@ -28,6 +29,14 @@ int main()
 		{
 			c = false;
 			cout<<"Game Over"<<"\n";
+			cout<<tic.get_winner()<<" Wins."<<"\n";
+			cout<<"Play again? Y/N"<<"\n";
+			cin>> ans;
+			if(ans == "Y" || ans == "y")
+			{
+				c = true;
+				tic.start_game("X");
+			}
 		}
 	}
 	return 0;

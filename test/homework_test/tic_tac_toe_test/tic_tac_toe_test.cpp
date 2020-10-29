@@ -8,9 +8,76 @@ TEST_CASE("Check TicTacToe")
 {
 	TicTacToe tic;
 	tic.start_game("X");
-	for(int i = 1; i<10; i++)
-	{
-		tic.mark_board(i);
-	}
+	//Tests for a tie
+	tic.mark_board(2);
+	REQUIRE(tic.game_over() == false);
+	tic.mark_board(1);
+	REQUIRE(tic.game_over() == false);
+	tic.mark_board(5);
+	REQUIRE(tic.game_over() == false);
+	tic.mark_board(3);
+	REQUIRE(tic.game_over() == false);
+	tic.mark_board(6);
+	REQUIRE(tic.game_over() == false);
+	tic.mark_board(4);
+	REQUIRE(tic.game_over() == false);
+	tic.mark_board(7);
+	REQUIRE(tic.game_over() == false);
+	tic.mark_board(8);
+	REQUIRE(tic.game_over() == false);
+	tic.mark_board(9);
 	REQUIRE(tic.game_over() == true);
+	REQUIRE(tic.get_winner() == "C");
+}
+TEST_CASE("Test first player set to X")
+{
+	TicTacToe tic;
+	tic.start_game("X");
+	REQUIRE(tic.get_player()=="X");
+}
+TEST_CASE("Test first player set to O")
+{
+	TicTacToe tic;
+	tic.start_game("O");
+	REQUIRE(tic.get_player()=="O");
+}
+TEST_CASE("Test win by first column")
+{
+	TicTacToe tic;
+	tic.start_game("X");
+}
+TEST_CASE("Test win by second column")
+{
+	TicTacToe tic;
+	tic.start_game("X");
+}
+TEST_CASE("Test win by third column")
+{
+	TicTacToe tic;
+	tic.start_game("X");
+}
+TEST_CASE("Test win by first row")
+{
+	TicTacToe tic;
+	tic.start_game("X");
+}
+TEST_CASE("Test win by second row")
+{
+	TicTacToe tic;
+	tic.start_game("X");
+}
+TEST_CASE("Test win by third row")
+{
+	TicTacToe tic;
+	tic.start_game("X");
+}
+TEST_CASE("Test win diagonally by top left")
+{
+	TicTacToe tic;
+	tic.start_game("X");
+}
+TEST_CASE("Test win diagonally by top right")
+{
+	TicTacToe tic;
+	tic.start_game("X");
 }

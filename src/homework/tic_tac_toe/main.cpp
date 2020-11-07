@@ -1,9 +1,12 @@
 #include<iostream>
 #include "tic_tac_toe.h"
+#include "tic_tac_toe_manager.h"
 using std::cout; using std::string; using std::cin;
 int main() 
 {
+	int totalGames = 0;
 	TicTacToe tic;
+	TicTacToeManager man;
 	int position;
 	string player;
 	string ans;
@@ -27,16 +30,23 @@ int main()
 		tic.display_board();
 		if(tic.game_over())
 		{
+			man.save_game(tic);
 			c = false;
 			cout<<"Game Over"<<"\n";
 			cout<<tic.get_winner()<<" Wins."<<"\n";
 			cout<<"Play again? Y/N"<<"\n";
 			cin>> ans;
+			totalGames++;
 			if(ans == "Y" || ans == "y")
 			{
 				c = true;
 				tic.start_game("X");
 			}
+			else
+			{
+				cout<<"Total games played: "<<totalGames<<"\n";
+			}
+			
 		}
 	}
 	return 0;

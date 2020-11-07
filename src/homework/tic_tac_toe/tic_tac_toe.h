@@ -1,4 +1,6 @@
 //h
+#ifndef TIC_TAC_TOE_H
+#define TIC_TAC_TOE_H
 #include<iostream>
 #include<vector>
 using std::string; using std::cout;
@@ -7,7 +9,7 @@ class TicTacToe
     private:
         std::string player;
         std::string winner;
-        std::vector<std::string> pegs{" ", " ", " ", " ", " ", " ", " ", " ", " "};
+        std::vector<std::string> pegs{9, " "};
         void set_next_player()
         {
             if(player == "X")
@@ -173,3 +175,4 @@ class TicTacToe
             return winner;
         }
 };
+#endif

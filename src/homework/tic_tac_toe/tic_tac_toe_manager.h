@@ -27,7 +27,6 @@ class TicTacToeManager
         }
     public:
         friend std::ostream& operator<<(std::ostream& out, const TicTacToeManager& manager);
-        //tictactoe SHOULD be const i guess
         void save_game(TicTacToe b)
         {
             games.push_back(b);

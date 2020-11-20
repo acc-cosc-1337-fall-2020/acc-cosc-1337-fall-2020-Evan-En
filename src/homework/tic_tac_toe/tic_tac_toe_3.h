@@ -5,6 +5,7 @@ using std::string; using std::cout;
 class TicTacToe3 : public TicTacToe
 {
     public:
+        TicTacToe3(std::vector<string> p, string winner): TicTacToe(p, winner){}
         TicTacToe3(): TicTacToe(3){}
     private:
         bool check_column_win()

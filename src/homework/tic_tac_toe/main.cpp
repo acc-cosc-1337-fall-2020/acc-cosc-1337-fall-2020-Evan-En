@@ -7,6 +7,7 @@
 using std::cout; using std::string; using std::cin; using std::unique_ptr; using std::make_unique;
 int main() 
 {
+	TicTacToeData data;
 	int totalGames = 0;
 	int size;
 	cout<<"Enter size 3 or 4: "<<"\n";

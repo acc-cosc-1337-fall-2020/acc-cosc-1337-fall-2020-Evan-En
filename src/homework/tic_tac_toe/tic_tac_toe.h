@@ -8,8 +8,18 @@ class TicTacToe
 {
     public:
         int siz;
-        TicTacToe(int s) :pegs(s*s, " "){
+        TicTacToe(int s) :pegs(s*s, " ")
+        {
             siz = s;
+        }
+        TicTacToe(std::vector<string> p, string win)
+        {
+            pegs = p;
+            winner = win;
+        }
+        const std::vector<std::string> get_pegs()
+        {
+            return pegs;
         }
         void start_game(std::string first_player)
         {
